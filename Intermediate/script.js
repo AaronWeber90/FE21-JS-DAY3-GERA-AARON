@@ -32,45 +32,45 @@
 
 
 ////////////////////////////////////////// CLASS CARS
-class Cars {
-    brand;
-    color;
-    type;
+// class Cars {
+//     brand;
+//     color;
+//     type;
 
-    constructor(brand, color, type) {
-        this.brand = brand;
-        this.color = color;
-        this.type = type;
-    }
+//     constructor(brand, color, type) {
+//         this.brand = brand;
+//         this.color = color;
+//         this.type = type;
+//     }
 
-    carSpecs() {
-        return "My car is " + this.brand + ". The color is " + this.color + ". It is " + this.type + " type."
-    }
-}
+//     carSpecs() {
+//         return "My car is " + this.brand + ". The color is " + this.color + ". It is " + this.type + " type."
+//     }
+// }
 
-class Specs extends Cars {
-    numWheels;
-    horsePower;
+// class Specs extends Cars {
+//     numWheels;
+//     horsePower;
 
-    constructor(brand, color, type, numWheels, horsePower) {
-    super(brand, color, type);
-    this.numWheels = numWheels;
-    this.horsePower = horsePower;
-    }
+//     constructor(brand, color, type, numWheels, horsePower) {
+//     super(brand, color, type);
+//     this.numWheels = numWheels;
+//     this.horsePower = horsePower;
+//     }
 
-    carSpecs() {
-        return super.carSpecs() + " It has " + this.numWheels + " wheels" + " and " + this.horsePower + "HP.";
-    }
-}
+//     carSpecs() {
+//         return super.carSpecs() + " It has " + this.numWheels + " wheels" + " and " + this.horsePower + "HP.";
+//     }
+// }
 
 
 // let car1 = new Cars("Tesla", "blue", "electronic")
 // let car2 = new Cars("Nissan", "purple", "benzin")
 // let car3 = new Cars("Audi", "red", "diesel")
-let car4 = new Specs("BMW", "yellow", "benzin", 4, 150)
+// let car4 = new Specs("BMW", "yellow", "benzin", 4, 150)
 
-document.write(car4.carSpecs());
-console.log(car4.carSpecs())
+// document.write(car4.carSpecs());
+// console.log(car4.carSpecs())
 
 // document.write(car3.carSpecs())
 // document.write(car2.carSpecs())
@@ -94,38 +94,61 @@ class Animals {
     }
 }
 
+class AnimalExtenion extends Animals {
+    legs;
+    weight;
+
+    constructor(a, b, c, d, e) {
+        super(a, b, c);
+        this.legs = d;
+        this.weight = e;
+    }
+
+    animalSpecs() {
+        return `${super.animalSpecs()}. It has ${this.legs} legs and weighs ${this.weight}kg.`
+    }
+}
+
+
+let animal3 = new AnimalExtenion("white", "bear", "Iceland", 4, 250)
 let animal1 = new Animals("brown", "bear", "woods")
 let animal2 = new Animals("black", "cat", "city")
 
+
+
 console.log(animal1.animalSpecs())
+document.getElementById("animal1").innerHTML = animal1.animalSpecs();
 console.log(animal2.animalSpecs())
+document.getElementById("animal2").innerText = animal2.animalSpecs();
+console.log(animal3.animalSpecs())
+document.getElementById("animal3").innerHTML = animal3.animalSpecs();
 
 
 
 //////////////////////////////////////////// CLASS PERSON
-class Person {
-    name;
-    age;
-    weight;
-    city;
+// class Person {
+//     name;
+//     age;
+//     weight;
+//     city;
 
-    constructor(a, b, c, d) {
-        this.name = a;
-        this.age = b;
-        this.weight = c;
-        this.city = d;
-    }
+//     constructor(a, b, c, d) {
+//         this.name = a;
+//         this.age = b;
+//         this.weight = c;
+//         this.city = d;
+//     }
 
-    personSpecs() {
-        return `${this.name} is ${this.age} years old, weights ${this.weight}kg and lives in ${this.city}.<br>`
-    }
-}
+//     personSpecs() {
+//         return `${this.name} is ${this.age} years old, weights ${this.weight}kg and lives in ${this.city}.<br>`
+//     }
+// }
 
-let person1 = new Person("Serri", "31", "90", "Vienna");
-let person2 = new Person("Irati", "27", "60", "Madrid");
+// let person1 = new Person("Serri", "31", "90", "Vienna");
+// let person2 = new Person("Irati", "27", "60", "Madrid");
 
-console.log(person1.personSpecs())
-document.write(person1.personSpecs())
+// console.log(person1.personSpecs())
+// document.write(person1.personSpecs())
 
-console.log(person2.personSpecs())
-document.write(person2.personSpecs())
+// console.log(person2.personSpecs())
+// document.write(person2.personSpecs())
